@@ -1,0 +1,29 @@
+<!doctype html><html ng-app>
+  <head>
+    <title>Wolfram Alpha Matrix</title>
+
+    <meta charset="utf-8">
+    <script src="js/angular.min.js"></script>
+    <script src="js/WolframMatrix.js"></script>
+  </head>
+
+  <body ng-controller="MainController">
+    <p style="font-size: 30px; font-weight: bold;">Wolfram Alpha Matrix Editor</p>
+
+    <p>
+      <input type="button" ng-click="addRow()" value="Add Row">
+      <input type="button" ng-click="addColumn()" value="Add Column">
+    </p>
+
+    <p ng-repeat="row in matrix">
+      <span ng-repeat="column in row">
+        <input type="text" style="width: 20px; text-align: center;" ng-model="row[$index]" ng-change="update()">
+      </span>
+    </p>
+
+    <p><input type="text" ng-model="output" style="width: 300px;" readonly></p>
+    <p><input type="button" value="Wolfram Alpha!" ng-click="wolframSearch()"></p>
+
+    <p style="margin-top: 80px;">By <a href="http://www.github.com/davidgomes">David Gomes</a></p>
+  </body>
+</html>
