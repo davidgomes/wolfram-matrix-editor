@@ -15,6 +15,11 @@
       <input type="button" ng-click="addColumn()" value="Add Column">
     </p>
 
+    <p>
+      <input type="button" ng-click="removeRow()" value="Remove Row">
+      <input type="button" ng-click="removeColumn()" value="Remove Column">
+    </p>
+
     <p ng-repeat="row in matrix">
       <span ng-repeat="column in row">
         <input type="text" style="width: 20px; text-align: center;" ng-model="row[$index]" ng-change="update()">
